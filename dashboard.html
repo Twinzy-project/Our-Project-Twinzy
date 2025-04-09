@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twinzy Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(#E6D0FF, #FAD0DC);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: white;
+            color: black;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: black !important;
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+        }
+
+        .nav-link:hover {
+            background-color: #E6D0FF;
+            border-radius: 5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 270px; /* Adjusted to align with sidebar */
+            padding: 20px;
+            width: 100%;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Graphs */
+        .chart-container {
+            width: 100%;
+            max-width: 400px; /* Limits chart size */
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <h3>Twinzy</h3>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="./task tracker.html" class="nav-link">Task Tracker</a></li>
+            <li class="nav-item"><a href="./ai insights.html" class="nav-link">AI Insights</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Welcome Back, User!</h2>
+
+        <!-- Stats Overview -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <h5>Tasks Completed</h5>
+                    <h3>75%</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <h5>Streak</h5>
+                    <h3>10 Days</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <h5>AI Insights</h5>
+                    <h3>Optimized!</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graphs Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <canvas id="taskChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <canvas id="streakChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart.js Configuration
+        const taskCtx = document.getElementById('taskChart').getContext('2d');
+        const taskChart = new Chart(taskCtx, {
+            type: 'pie',  // Pie chart for task completion
+            data: {
+                labels: ['Completed', 'Remaining'],
+                datasets: [{
+                    data: [75, 25],
+                    backgroundColor: ['#8A2BE2', '#E6D0FF']
+                }]
+            }
+        });
+
+        const streakCtx = document.getElementById('streakChart').getContext('2d');
+        const streakChart = new Chart(streakCtx, {
+            type: 'bar',  // Bar chart for streaks
+            data: {
+                labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
+                datasets: [{
+                    label: 'Streak Progress',
+                    data: [2, 4, 6, 8, 10],
+                    backgroundColor: '#8A2BE2'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>
