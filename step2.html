@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .card {
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            border: 2px solid grey;
+        }
+        .card-header{
+            background-image: linear-gradient(to right,#e6d0ff,#fad0dc);
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .bg-white {
+            background-color: white !important;
+        }
+        .btn-purple {
+            background-color: #8A2BE2;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .btn-purple:hover {
+            background-color: #6a1b9a;
+            color: white;
+        }
+        .bg-violet{
+            background-image: linear-gradient(to right,#e6d0ff,#fad0dc);
+        }
+        .form-control {
+            border-radius: 8px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Welcome!!</h3>
+                        <p class="lead">Let's get you set up in a few simple steps!!</p>
+                    </div>
+                    <div class="card-body">
+                        <form id="onboarding-form">
+                            <div class="form-group mb-3">
+                                <label for="FullName">Full Name:</label>
+                                <input type="text" id="FullName" class="form-control bg-violet" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="Age">Age:</label>
+                                <input type="number" id="Age" class="form-control bg-violet" required placeholder="Enter your age">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="Gender">Gender:</label>
+                                <select class="form-control bg-violet" id="Gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="d-flex justify-content-center mt-4">
+                                <button type="submit" class="btn btn-purple" id="next-btn">Next</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('onboarding-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (this.checkValidity()) {
+                alert('Form successfully submitted!');
+            }
+        });
+        document.getElementById("next-btn").addEventListener("click", function() {
+          window.location.href = "step3.html";
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Twinzy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        .body{
+            font-family: Arial,sans-serif;
+            background-color: white;
+        }
+        input{
+            width: 100%;
+            height: 30px;
+            border-radius: 4px;
+            border: 2px solid black;
+            background-color: transparent;
+        }
+        .card {
+            border-radius: 10px;
+            border: 2px solid grey;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .card-body{
+            background-color: white;
+        }
+        .card-header{
+            background-image: linear-gradient(to right,#e6d0ff,#fad0dc);
+        }
+        .bg-violet{
+            background-image: linear-gradient(to right,#e6d0ff,#fad0dc);
+        }
+    </style>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card bg-transparent bg-black">
+                    <div class="card-header">
+                    <h3>Welcome!!</h3>
+                    <p class="lead">Let's get you set up in a few simple steps!!</p>
+                </div>
+                <div class="card-body">
+                    <div class="step1">
+                        <form>
+                            <div class="form-group">
+                                <label for="language">Choose a Language
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-globe-central-south-asia" viewBox="0 0 16 16">
+                                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M4.882 1.731a.48.48 0 0 0 .14.291.487.487 0 0 1-.126.78l-.291.146a.7.7 0 0 0-.188.135l-.48.48a1 1 0 0 1-1.023.242l-.02-.007a1 1 0 0 0-.462-.04 7 7 0 0 1 2.45-2.027m-3 9.674.86-.216a1 1 0 0 0 .758-.97v-.184a1 1 0 0 1 .445-.832l.04-.026a1 1 0 0 0 .152-1.54L3.121 6.621a.414.414 0 0 1 .542-.624l1.09.818a.5.5 0 0 0 .523.047.5.5 0 0 1 .724.447v.455a.8.8 0 0 0 .131.433l.795 1.192a1 1 0 0 1 .116.238l.73 2.19a1 1 0 0 0 .949.683h.058a1 1 0 0 0 .949-.684l.73-2.189a1 1 0 0 1 .116-.238l.791-1.187A.45.45 0 0 1 11.743 8c.16 0 .306.084.392.218.557.875 1.63 2.282 2.365 2.282l.04-.001a7.003 7.003 0 0 1-12.658.905Z"/>
+                                      </svg>
+                                </label>                                  
+                                <select class="form-control bg-transparent bg-violet" id="language">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                </select>
+                                <style>
+                                    .btn-purple{
+                                        background-color: #8A2BE2;
+                                        color: white;
+                                        border-radius: 50px;
+                                        padding: 10px 30px;
+                                        font-size: 18px;
+                                        transition: background-color 0.3s;
+                                    }
+                                    .btn-purple:hover{
+                                        background-color: #6a1b9a;
+                                        color: white;
+                                    }
+                                </style>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button type="button" class="btn btn-purple" id="next-btn">Next</button>
+                                </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("next-btn").addEventListener("click", function() {
+          window.location.href = "step2.html";
+        });
+      </script>
+</body>
+</html>
